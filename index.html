@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зодиак</title>
+</head>
+<body style="background-color: #333; color: white;">
+    <div style="text-align: center;">
+
+
+        <fieldset class="fs">
+            <legend>День рождения</legend>
+            <h2>З О Д И А К </h2>
+            <input type="number" placeholder="Число" id="Chislo" class="tb">         
+            <input type="number" placeholder="Месяц" id="Mes" class="tb">                  
+           <br>
+            <br>
+            <input type="button" value="Вывести" onclick="fZodiak()">
+            <br>
+            <br>
+            <img id="ImgZ" title="Знак зодиака" src="ImgZod/z.jpg" style="width: 300px;">
+            <div id="TextZ"></div>    
+        </fieldset>
+
+
+        <fieldset class="fs">
+            <legend>Год рождения</legend>
+ 
+          <h2>Восточный календарь</h2>
+            <input type="number" placeholder="Год" id="God" class="tb">
+           <br>
+            <br>
+            <input type="button" value="Вывести" onclick="fVC()">
+            <br>
+            <br>
+      
+            <img id="VostC" src="VostCalend\vc.jpg" style="width: 300px;">
+            <div id="TextVC"></div>
+          
+                  
+        </fieldset>
+
+        <fieldset class="fs">
+            <legend>Цвет и стихия</legend>
+            <div id="TextSt"></div> 
+            <br>
+            <img id="StVC" src="VostCalend\ss.jpg" style="width: 300px;">
+                       
+        </fieldset>
+</div>
+</body>
+</html>
+<script>
+
+    function fZodiak()
+    {
+        let c=parseInt(Chislo.value)
+        let m=parseInt(Mes.value)
+
+        //   «Водолей»  (20.1–18.2),
+        if (c>=20 && c<=31 && m==1 || c>=1 && c<=18 && m==2)  
+    {
+        ImgZ.src="ImgZod/vodolei.jpg"
+        TextZ.innerHTML="Водолей"
+    }
+
+//     «Рыбы» (19.2–20.3), 
+if (c>=19 && c<=29 && m==2 || c>=1 && c<=20 && m==3)  
+    {
+        ImgZ.src="ImgZod/ribi.jpg"
+        TextZ.innerHTML="Рыбы"
+    }
+//     «Овен» (21.3–19.4), 
+    if (c>=21 && c<=31 && m==3 || c>=1 && c<=19 && m==4)  
+    {
+        ImgZ.src="ImgZod/oven.jpg"
+        TextZ.innerHTML="Овен"
+    }
+//     «Телец» (20.4–20.5), 
+if (c>=20 && c<=30 && m==4 || c>=1 && c<=20 && m==5)  
+    {
+        ImgZ.src="ImgZod/telec.jpg"
+        TextZ.innerHTML="Телец"
+    }
+// «Близнецы» (21.5–21.6), 
+if (c>=21 && c<=31 && m==5 || c>=1 && c<=21 && m==6)  
+    {
+        ImgZ.src="ImgZod/blizn.jpg"
+        TextZ.innerHTML="Близнецы"
+    }
+    //  «Рак» (22.6–22.7), 
+    if (c>=22 && c<=30 && m==6 || c>=1 && c<=22 && m==7)  
+    {
+        ImgZ.src="ImgZod/rak.jpg"
+        TextZ.innerHTML="Рак"
+    }
+//«Лев» (23.7–22.8), 
+    if (c>=23 && c<=31 && m==7 || c>=1 && c<=22 && m==8)  
+    {
+        ImgZ.src="ImgZod/lev.jpg"
+        TextZ.innerHTML="Лев"
+    }
+//    «Дева» (23.8–22.9), 
+    if (c>=23 && c<=31 && m==8 || c>=1 && c<=22 && m==9)  
+    {
+        ImgZ.src="ImgZod/deva.jpg"
+        TextZ.innerHTML="Дева"
+    }
+//  «Весы» (23.9–22.10), 
+    if (c>=23 && c<=30 && m==9 || c>=1 && c<=22 && m==10)  
+    {
+        ImgZ.src="ImgZod/vesi.jpg"
+        TextZ.innerHTML="Весы"
+    }
+// «Скорпион» (23.10–22.11), 
+    if (c>=23 && c<=31 && m==10 || c>=1 && c<=22 && m==11)  
+    {
+        ImgZ.src="ImgZod/lev.jpg"
+        TextZ.innerHTML="Лев"
+    }
+//     «Стрелец» (23.11–21.12), 
+    if (c>=23 && c<=30 && m==11 || c>=1 && c<=21 && m==12)  
+    {
+        ImgZ.src="ImgZod/strelec.jpg"
+        TextZ.innerHTML="Стрелец"
+    }
+//«Козерог» (22.12–19.1). 
+    if (c>=22 && c<=31 && m==12 || c>=1 && c<=19 && m==1)  
+    {
+        ImgZ.src="ImgZod/strelec.jpg"
+        TextZ.innerHTML="Стрелец"
+    }
+
+          
+
+    }
+    function fVC()
+    {
+         /*   
+       4 крысы, 
+       5 коровы, 
+       6 тигра, 
+       7 зайца, 
+       8 дракона, 
+       9 змеи, 
+       10 лошади, 
+       11 овцы, 
+       0 обезьяны, 
+       1 курицы, 
+       2 собаки и 
+       3 свиньи
+       */
+
+    let g=parseInt(God.value)
+    let ost=g%12
+    if (ost==0)
+    {
+        VostC.src="VostCalend/obezana.png"
+        TextVC.innerHTML="Год обезьяны"
+    }
+    if (ost==1)
+    {
+        VostC.src="VostCalend/petyx.png"
+        TextVC.innerHTML="Год петуха"
+    }
+    if (ost==2)
+    {
+        VostC.src="VostCalend/sabaka.png"
+        TextVC.innerHTML="Год собаки"
+    }
+    if (ost==3)
+    {
+        VostC.src="VostCalend/swinia.png"
+        TextVC.innerHTML="Год свиньи"
+    }
+    if (ost==4)
+    {
+        VostC.src="VostCalend/krisa.png"
+        TextVC.innerHTML="Год крысы"
+    } 
+    if (ost==5)
+    {
+        VostC.src="VostCalend/bik.png"
+        TextVC.innerHTML="Год быка"
+    } 
+    if (ost==6)
+    {
+        VostC.src="VostCalend/tigr.png"
+        TextVC.innerHTML="Год тигра"
+    } 
+    if (ost==7)
+    {
+        VostC.src="VostCalend/zaic.png"
+        TextVC.innerHTML="Год зайца"
+    }
+    if (ost==8)
+    {
+        VostC.src="VostCalend/dracon.png"
+        TextVC.innerHTML="Год дракона"
+    } 
+    if (ost==9)
+    {
+        VostC.src="VostCalend/zmea.png"
+        TextVC.innerHTML="Год змеи"
+    }
+    if (ost==10)
+    {
+        VostC.src="VostCalend/loshad.png"
+        TextVC.innerHTML="Год лошади"
+    }  
+    if (ost==11)
+    {
+        VostC.src="VostCalend/koza.png"
+        TextVC.innerHTML="Год козы"
+    }    
+
+
+       /*
+       Если последняя цифра 
+        0 или 1 – металл, цвет – белый
+
+        2 или 3 – вода, цвета – тёмно-синий, чёрный
+
+        4 или 5 – дерево, цвета – голубой, зелёный
+
+        6 или 7 – огонь, цвет – красный
+
+        8 или 9 – земля, цвет – жёлтый.
+        */
+
+    let pc=g%10;
+    if (pc==0 || pc==1)
+    {
+        TextSt.innerHTML="Металл, цвет – белый"        
+    }
+    if (pc==2 || pc==3)
+    {
+        TextSt.innerHTML="Вода, цвета – тёмно-синий, чёрный"        
+    }
+    if (pc==4 || pc==5)
+    {
+        TextSt.innerHTML="Дерево, цвета – голубой, зелёный"        
+    }
+    if (pc==6 || pc==7)
+    {
+        TextSt.innerHTML="Огонь, цвет – красный"        
+    }
+    if (pc==8 || pc==9)
+    {
+        TextSt.innerHTML="Земля, цвет – жёлтый"        
+    }
+
+
+    }
+</script>
+<style>
+    .tb
+    {
+        width: 80px;;
+    }
+    .fs
+    {
+        float: left;
+   
+    }
+
+</style>
